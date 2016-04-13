@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    position:relative;
+}
+html{
+    zoom:100%;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background-color: #333;
+}
+a , .caption{
+    color:white;
+}
+.linkSet{
+    text-align: center;
+}
+.textLink{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+#header{
+    text-align: right;
+}
+#navigation{
+    background: #69be28;
+}
+#textLinks{
+    position:absolute;
+}
+
+#loginLink{
+    padding-left: 0%;
+    padding-right: 0.5%;
+}
+
+
+

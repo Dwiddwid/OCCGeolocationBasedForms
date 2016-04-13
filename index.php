@@ -1,30 +1,58 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!DOCTYPE html >
+<?php
+include './common.php';
+?>
 <html>
+
     <head>
-        <meta charset="UTF-8">
-        <title>OCC Sign-In</title>
+        <title>Operation Christmas Child</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="shortcut icon" href="SP_Icon.png" type="image/png">
+        <script src="indexMethods.js"></script>
+
     </head>
-   <?php 
-   print '<p>Where to buddy?';
-   print '<p><a href="FormsPage.php">Fill out form</a></p>';
-   print '<p><a href="VolunteerRegistration.php">Short-Term Volunteers</a></p>';
-    
-//<!--    <p><a href="">Insert Person?</a>
-//    <p>Retrieve Person?
-//    <p><a href="RetrievedOrganization.php">Retrieve Organization?
-//    </a>
-//    <p><a href="BoggleBoard.php">Boggle Game</a>-->
 
+    <body onload="setStyles()"  onresize="setStyles()">
 
-    ?>
+        <div id="header" >
+            <div id="loginLink">
+                <?php
+                textLink("login", "Login");
+                ?>
+            </div>
+        </div>
 
-</body>
+        <div id="navigation">
+            <image id="logoImage" src="logo.png">
+            <div id="textLinks" class="linkSet">
+                <?php
+                textLink("dropoff", "Drop-Off");
+                textLink("event", "Event Check-In");
+                textLink("volunteer", "Short-Term Volunteers");
+                ?>
+            </div>
+        </div>
+
+        <div id="main">
+            <table id = "imageLinks" class="linkSet">
+                <tr>
+                    <td>
+                        <?php
+                        imageLink("dropoff", "Drop-Off", "https://pixabay.com/static/uploads/photo/2013/07/13/14/05/location-162102_960_720.png");
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        imageLink("event", "Event Check-In", "http://photos1.blogger.com/blogger/3504/1968/400/BookSigning.png");
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        imageLink("volunteer", "Short-Term Volunteers", "http://i.vimeocdn.com/video/505078333_1280x720.jpg");
+                        ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
 </html>
-
-<?php ?>
-

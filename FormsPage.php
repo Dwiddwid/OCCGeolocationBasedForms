@@ -9,40 +9,40 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <?php
-    print'<body onload="getLocation()">';
+    
+    <body onload="getLocation()">
 
-    print '<p>This is a test of geolocation. Your location will be displayed below.</p>';
-
-
-    print '<p id="demo"></p>';
-
-    print '<div id="map"></div>';
+    <p>This is a test of geolocation. Your location will be displayed below.</p>
 
 
+    <p id="demo"></p>
 
-    print '<script>';
-    print 'var x = document.getElementById("demo");';
+    <div id="map"></div>
 
-    print 'function getLocation() {
+
+
+    <script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
             } else {
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
-        }';
+        }
 
-    print 'function showPosition(position) {
+    function showPosition(position) {
             x.innerHTML = "Latitude: " + position.coords.latitude +
                     "<br>Longitude: " + position.coords.longitude;
-        }';
-    print '</script>';
+        }
+    </script>
 
 
-    print '</body>';
+    </body>
 
 
-    print '<form action="PeopleAdded.php" method="post">
+    <form action="PeopleAdded.php" method="post">
     First Name: <input type="text" name="first"><br>
     Last Name: <input type="text" name="last"><br>
     Suffix: <input name="suffix" type="text" size="5" maxlength="5"><br>
@@ -57,7 +57,7 @@ and open the template in the editor.
     Email: <input type="text" name="email"><br>
     Church: <select name="church" size="1" id="church">
       <option value="NULL" selected="selected"></option>';
-
+<?php
     require_once('OCCSQLI_Connect.php');
 
     $query = 'SELECT officialName FROM organization WHERE organizationID = 1 ORDER BY officialName/;';

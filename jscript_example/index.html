@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Javascript PHP example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js">
+</script>
+</head>
+
+<body>
+<h2>jQuery/PHP Example</h2>
+<p>
+This is a JavaScript (jQuery) example where we use javascript to send data to a PHP server script, get info back, and then put it into a label without leaving this page.
+</p>
+<!-- Some form elements to input a string of text and query a PHP script -->
+Type in a string: <input type=text name='submission' id=txtSubmission>
+<button id='btnQuery' onclick='queryServer()'>Query Server</button>
+<br/>
+<!-- Reply from server will go into label below -->
+<label id='lblServerReply'></label>
+
+<!-- function below submits whatever is in the submission textbox
+     to the PHP script, waits for the server to sent a string back,
+     which is in the .done callback, and puts that string in lblServerReply
+-->
+<script>
+function queryServer()
+{
+        txtSubmission = document.getElementById('txtSubmission');
+        lblReply = document.getElementById('lblServerReply');
+        $.get('queryServer.php', { submission: txtSubmission.value })
+         .done(function(data) {
+                lblReply.innerHTML= lblReply.innerHTML + '<br/>' +
+                        '<b>' + data + '</b>';
+         });
+}
+</script>
+
+</body>
+</html>
+
