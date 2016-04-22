@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <?php
-include './common.php';
+
+function textLink($id, $text) {
+    $output = "<span id=\"$id" . "Link\" class=\"textLink\">";
+    $output.="<a href=\"$id" . ".php\">";
+    $output.=$text;
+    $output.="</a>";
+    $output.="</span>";
+    echo $output;
+    unset($output);
+}
 ?>
 <html>
     <head>

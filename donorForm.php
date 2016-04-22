@@ -6,13 +6,13 @@ $connection = mysqli_connect("127.0.0.1", "occ", "occ470", "occ")
 mysqli_select_db($connection, $db_name);
 
 $query = "call insertperson('" . $_POST["firstName"] . "',"
-        . "'" . $_POST["firstName"] . "',"
         . "'" . $_POST["middleName"] . "',"
         . "'" . $_POST["lastName"] . "',"
         . "'" . $_POST["suffix"] . "',"
         . "'" . $_POST["street"] . "',"
         . "'" . $_POST["city"] . "',"
         . "'" . $_POST["state"] . "',"
+        . "'pobox',"
         . "'" . $_POST["zip"] . "',"
         . "'" . $_POST["phone"] . "',"
         . "'" . $_POST["email"] . "',"
